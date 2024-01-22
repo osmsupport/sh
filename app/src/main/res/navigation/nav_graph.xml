@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/matchSummaryFragment">
+
+    <fragment
+        android:id="@+id/matchSummaryFragment"
+        android:name="com.example.webeteer.view.summary.view.MatchSummaryFragment"
+        android:label="MatchSummaryFragment"
+        tools:layout="@layout/fragment_match_summary">
+        <action
+            android:id="@+id/action_scoreCardFragment"
+            app:destination="@id/scoreCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreCardFragment"
+        android:name="com.example.webeteer.view.details.view.ScoreCardFragment"
+        android:label="ScoreCardFragment"
+        tools:layout="@layout/fragment_score_card" />
+</navigation>

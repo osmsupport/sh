@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.webeteer.view.details.viewmodel.ScoreCardFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.details.view.ScoreCardFragment">
+
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutHeaderTeamA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/toolbar"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_team_header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTeamNameA"
+                        style="@style/StyleScoreTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.teamA.name}"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Sri Lanka" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTeamScoreA"
+                        style="@style/StyleScoreTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.scoreTeamA}"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="99-1 (10.5)" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutBattersTeamA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_score_card_table_header"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutHeaderTeamA">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Batter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBatterRunTeamA"
+                        app:layout_constraintHorizontal_weight="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterRunTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="R"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBatterBallsTeamA"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBatterTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterBallsTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="B"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBatterFoursTeamA"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBatterRunTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterFoursTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="4s"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBatterSixesTeamA"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBatterBallsTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterSixesTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="6s"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBatterSrTeamA"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBatterFoursTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterSrTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="SR"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1.5"
+                        app:layout_constraintStart_toEndOf="@id/tvBatterSixesTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBattersTeamA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_recyclerview"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutBattersTeamA"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_batters_list" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLabelTotal"
+                    style="@style/StyleScoreTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/app_padding_horizontal"
+                    android:layout_marginTop="@dimen/padding_vertical_score_card_header"
+                    android:text="Total"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvBattersTeamA" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTotalScore"
+                    style="@style/StyleScoreTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/app_padding_horizontal"
+                    android:text="@{viewModel.scoreTeamA}"
+                    app:layout_constraintBottom_toBottomOf="@id/tvLabelTotal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvLabelTotal"
+                    tools:text="99-1 (10.5)" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutBowlersTeamA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/background_score_card_table_header"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelTotal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Bowler"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBowlerOverTeamA"
+                        app:layout_constraintHorizontal_weight="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerOverTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="O"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBowlerMediumTeamA"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBowlerTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerMediumTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="M"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBowlerRunsTeamA"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBowlerOverTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerRunsTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="R"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBowlerWicketsTeamA"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBowlerMediumTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerWicketsTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="W"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBowlerErTeamA"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBowlerRunsTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerErTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="ER"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1.5"
+                        app:layout_constraintStart_toEndOf="@id/tvBowlerWicketsTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBowlersTeamA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_recyclerview"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutBowlersTeamA"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_bowlers_list" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutWicketsTeamA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/background_score_card_table_header"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvBowlersTeamA">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvWicketBatterTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Fall of Wickets"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvWicketScoreTeamA"
+                        app:layout_constraintHorizontal_weight="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvWicketScoreTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Score"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvWicketOverTeamA"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvWicketBatterTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvWicketOverTeamA"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Over"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvWicketScoreTeamA"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvWicketsTeamA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_recyclerview"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutWicketsTeamA"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_wicket_falls" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutHeaderTeamB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/toolbar"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_team_header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvWicketsTeamA">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/StyleScoreTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.teamB.name}"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Sri Lanka" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/StyleScoreTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.scoreTeamB}"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="99-1 (10.5)" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutBattersTeamB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_score_card_table_header"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutHeaderTeamB">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Batter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBatterRunTeamB"
+                        app:layout_constraintHorizontal_weight="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterRunTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="R"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBatterBallsTeamB"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBatterTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterBallsTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="B"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBatterFoursTeamB"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBatterRunTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterFoursTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="4s"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBatterSixesTeamB"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBatterBallsTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterSixesTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="6s"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBatterSrTeamB"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBatterFoursTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBatterSrTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="SR"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1.5"
+                        app:layout_constraintStart_toEndOf="@id/tvBatterSixesTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBattersTeamB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_recyclerview"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutBattersTeamB"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_batters_list" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLabelTotalTeamB"
+                    style="@style/StyleScoreTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/app_padding_horizontal"
+                    android:layout_marginTop="@dimen/padding_vertical_score_card_header"
+                    android:text="Total"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvBattersTeamB" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/StyleScoreTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/app_padding_horizontal"
+                    android:text="@{viewModel.scoreTeamB}"
+                    app:layout_constraintBottom_toBottomOf="@id/tvLabelTotalTeamB"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvLabelTotalTeamB"
+                    tools:text="99-1 (10.5)" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutBowlersTeamB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/background_score_card_table_header"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelTotalTeamB">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Bowler"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBowlerOverTeamB"
+                        app:layout_constraintHorizontal_weight="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerOverTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="O"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBowlerMediumTeamB"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBowlerTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerMediumTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="M"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBowlerRunsTeamB"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBowlerOverTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerRunsTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="R"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBowlerWicketsTeamB"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBowlerMediumTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerWicketsTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="W"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvBowlerErTeamB"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvBowlerRunsTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBowlerErTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="ER"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1.5"
+                        app:layout_constraintStart_toEndOf="@id/tvBowlerWicketsTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBowlersTeamB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_recyclerview"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutBowlersTeamB"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_bowlers_list" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutWicketsTeamB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/background_score_card_table_header"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvBowlersTeamB">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvWicketBatterTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Fall of Wickets"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvWicketScoreTeamB"
+                        app:layout_constraintHorizontal_weight="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvWicketScoreTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Score"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvWicketOverTeamB"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvWicketBatterTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvWicketOverTeamB"
+                        style="@style/StyleScoreCardHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Over"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tvWicketScoreTeamB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvWicketsTeamB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/app_padding_horizontal"
+                    android:paddingVertical="@dimen/padding_vertical_score_card_recyclerview"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutWicketsTeamB"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_wicket_falls" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

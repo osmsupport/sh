@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="wicketNumber"
+            type="String" />
+
+        <variable
+            name="data"
+            type="com.example.webeteer.view.summary.model.Wicket" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingVertical="@dimen/padding_vertical_score_card_header">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWicketBatterTeamA"
+            style="@style/StylePlayerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{data.player}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvWicketScoreTeamA"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="John Smith" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWicketScoreTeamA"
+            style="@style/StyleScoreCardHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.score) + `-` + wicketNumber}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvWicketOverTeamA"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tvWicketBatterTeamA"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10-1" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWicketOverTeamA"
+            style="@style/StyleScoreCardHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.overs)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tvWicketScoreTeamA"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="3.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="toolbar">#10AA62</color>
+    <color name="loading">#F44336</color>
+    <color name="text_values">#3A3939</color>
+    <color name="text_heading">#787878</color>
+    <color name="text_card_table_header">#8D8E8E</color>
+    <color name="background_score_card_table_header">#9AE4C2</color>
+    <color name="text_player_name">#329EF4</color>
+</resources>

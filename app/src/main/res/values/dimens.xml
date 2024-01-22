@@ -1,0 +1,10 @@
+<resources>
+
+    <dimen name="app_padding_horizontal">10dp</dimen>
+    <dimen name="padding_vertical_team_header">12dp</dimen>
+    <dimen name="padding_vertical_score_card_header">6dp</dimen>
+    <dimen name="padding_horizontal_match_summary_card">18dp</dimen>
+    <dimen name="padding_vertical_match_summary_card">14dp</dimen>
+    <dimen name="padding_vertical_score_card_recyclerview">6dp</dimen>
+
+</resources>

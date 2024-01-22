@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.webeteer.view.summary.model.Player" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingVertical="@dimen/padding_vertical_score_card_header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutPlayer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvBatterRun"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPlayerName"
+                style="@style/StylePlayerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Rohit Sharma" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/StyleScoreCardHeader"
+                battingDismissal="@{data.dismissal}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPlayerName"
+                tools:text="Not out" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBatterRun"
+            style="@style/StyleScoreCardHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.runs)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvBatterBalls"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/layoutPlayer"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBatterBalls"
+            style="@style/StyleScoreCardHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.balls)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvBatterFours"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tvBatterRun"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBatterFours"
+            style="@style/StyleScoreCardHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.fours)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvBatterSixes"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tvBatterBalls"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBatterSixes"
+            style="@style/StyleScoreCardHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.sixes)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvBatterSr"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tvBatterFours"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBatterSr"
+            style="@style/StyleScoreCardHeader"
+            strikeRate="@{data}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1.5"
+            app:layout_constraintStart_toEndOf="@id/tvBatterSixes"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10.23" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

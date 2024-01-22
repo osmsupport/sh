@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.webeteer.view.summary.viewmodel.MatchSummaryFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.summary.view.MatchSummaryFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/app_padding_horizontal"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.matchSummaryClick()}"
+                android:paddingHorizontal="@dimen/padding_horizontal_match_summary_card"
+                android:paddingVertical="@dimen/padding_vertical_match_summary_card">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTeamNameFirst"
+                    style="@style/StyleScoreTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.teamA.name}"
+                    app:layout_constraintBottom_toTopOf="@id/tvTeamNameSecond"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="PAK" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/StyleScoreTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.scoreTeamA}"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTeamNameFirst"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvTeamNameFirst"
+                    tools:text="10-1 (2.5)" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTeamNameSecond"
+                    style="@style/StyleScoreTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_vertical_match_summary_card"
+                    android:text="@{viewModel.teamB.name}"
+                    app:layout_constraintBottom_toTopOf="@id/tvTossOption"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTeamNameFirst"
+                    tools:text="SRL" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/StyleScoreTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.scoreTeamB}"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTeamNameSecond"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvTeamNameSecond"
+                    tools:text="10-1 (2.5)" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTossOption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_vertical_match_summary_card"
+                    android:fontFamily="@font/roboto"
+                    android:text="@{viewModel.matchSummaryData.toss + ` opt to ` + viewModel.matchSummaryData.toss_decision}"
+                    android:textColor="#F44336"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTeamNameSecond"
+                    tools:text="PAK opt to bowl" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

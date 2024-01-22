@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.webeteer.view.summary.model.Bowler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_vertical_score_card_header">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBowler"
+            style="@style/StylePlayerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{data.name}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvBowlerOver"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Richard Nagarwa" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBowlerOver"
+            style="@style/StyleScoreCardHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.overs)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvBowlerMedium"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tvBowler"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBowlerMedium"
+            style="@style/StyleScoreCardHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvBowlerRuns"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tvBowlerOver"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBowlerRuns"
+            style="@style/StyleScoreCardHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.runsConceded)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvBowlerWickets"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tvBowlerMedium"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBowlerWickets"
+            style="@style/StyleScoreCardHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.wickets)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvBowlerEr"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tvBowlerRuns"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBowlerEr"
+            style="@style/StyleScoreCardHeader"
+            economyRate="@{data}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1.5"
+            app:layout_constraintStart_toEndOf="@id/tvBowlerWickets"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10.54" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
